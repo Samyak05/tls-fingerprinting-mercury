@@ -18,6 +18,7 @@ red (client) ---- router (packet capture) ---- blue (TLS server)
 10.0.1.2             veth-r1: 1.0.1.1              10.0.2.2
                      veth-r2: 1.0.2.1
 ```
+![Topology](diagrams/topology.png)
 
 The router namespace captures packets using **tcpdump**, and the captured PCAP files are analyzed using **Mercury** to extract TLS fingerprints.
 
@@ -267,9 +268,16 @@ tls-fingerprinting/
 │   └── openssl.pcap   
 │
 ├── diagrams/
-│   └── tls_fingerprint_comparison.png
+│   └── topology.png
+│
+├── report/
+│   └── report.pdf
 │
 ├── results/
+│   ├── fingerprint_curl_tls12.png
+│   ├── fingerprint_curl_tls13.png
+│   ├── fingerprint_openssl.png 
+│   ├── fingerprint_python_ssl.pcng
 │   └── captured_fingerprints.json
 │
 ├── scripts/
@@ -319,6 +327,6 @@ These differences allow **passive identification of TLS clients**.
 
 # 👨‍💻 Author
 
-Samyak Gedam 
-M.Tech
+Samyak Gedam   
+M.Tech  
 National Institute of Technology Surathkal, Karnataka.
